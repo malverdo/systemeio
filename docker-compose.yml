@@ -6,7 +6,7 @@ services:
       context: deployment/docker/${APP}/nginx
       dockerfile: Dockerfile
     ports:
-      - "81:80"
+      - "2095:3000"
     volumes:
       - ./deployment/docker/${APP}/conf/${PROJECT}.conf:/etc/nginx/conf.d/${PROJECT}.conf
       - ./${PROJECT}:/home/apps
