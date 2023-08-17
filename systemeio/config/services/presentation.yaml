@@ -1,0 +1,19 @@
+services:
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+    public: false
+
+  App\Presentation\Controller\:
+    resource: '../../src/Presentation/Controller'
+    tags: ['controller.service_arguments']
+
+  App\Presentation\ArgumentResolver\:
+    resource: '../../src/Presentation/ArgumentResolver'
+    tags:
+      - { name: controller.argument_value_resolver, priority: 50 }
+#
+#  App\Presentation\Serializer\Normalizer\:
+#    resource: '../../src/Presentation/Serializer/Normalizer/*'
+#    tags:
+#      - { name: serializer.normalizer, priority: 30 }

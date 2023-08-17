@@ -1,0 +1,8 @@
+presentation_controllers:
+    resource: ../../src/Presentation/Controller
+    type: attribute
+    prefix: /v1
+
+kernel:
+    resource: App\Kernel
+    type: attribute
