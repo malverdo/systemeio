@@ -1,0 +1,24 @@
+services:
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: false
+
+    App\Application\UseCase\:
+        resource: '../../src/Application/UseCase'
+        autoconfigure: false
+
+    _instanceof:
+        App\Application\UseCase\CommandHandler:
+            tags: [{ name: messenger.message_handler, bus: messenger.bus.command }]
+
+        App\Application\UseCase\QueryHandler:
+            tags: [{ name: messenger.message_handler, bus: messenger.bus.query }]
+
+    App\Infrastructure\Bus\CommandBus:
+        arguments:
+            - '@messenger.bus.command'
+
+    App\Infrastructure\Bus\QueryBus:
+        arguments:
+            - '@messenger.bus.query'

@@ -1,0 +1,26 @@
+framework:
+    messenger:
+        transports:
+
+        default_bus: messenger.bus.default
+        buses:
+            messenger.bus.default:
+                middleware:
+                    - doctrine_ping_connection
+                    - doctrine_close_connection
+                    - doctrine_transaction
+
+            messenger.bus.command:
+                default_middleware: false
+                middleware:
+                    - validation
+                    - doctrine_ping_connection
+                    - doctrine_close_connection
+                    - doctrine_transaction
+                    - handle_message
+
+            messenger.bus.query:
+                default_middleware: false
+                middleware:
+                    - validation
+                    - handle_message
