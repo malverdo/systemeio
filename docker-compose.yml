@@ -1,0 +1,38 @@
+version: '3'
+services:
+  web:
+    container_name: systemeio_nginx
+    build:
+      context: deployment/docker/${APP}/nginx
+      dockerfile: Dockerfile
+    ports:
+      - "81:80"
+    volumes:
+      - ./deployment/docker/${APP}/conf/${PROJECT}.conf:/etc/nginx/conf.d/${PROJECT}.conf
+      - ./${PROJECT}:/home/apps
+    depends_on:
+      - systemeio
+  systemeio:
+    container_name: systemeio_php
+    build:
+      context: deployment/docker/${APP}/php
+      dockerfile: php-fpm.docker
+    volumes:
+      - ./${PROJECT}:/home/apps
+    # настройка Xdebug
+    environment:
+      - PHP_IDE_CONFIG=serverName=php
+  postgres:
+    container_name: systemeio_postgres
+    build:
+      context: deployment/docker/${APP}/postgres
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./deployment/db/docker_postgres_init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
+      - ./deployment/postgres-data:/var/lib/postgresql/data
