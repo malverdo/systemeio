@@ -13,6 +13,7 @@ use Exception;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route("/calculation")]
 class CalculationController
 {
     private ResponseFactory $responseFactory;
@@ -25,7 +26,7 @@ class CalculationController
         $this->queryBus = $queryBus;
     }
 
-    #[Route('/calculation/price', name: 'calculation_price', methods: ['POST'])]
+    #[Route('/price', name: 'calculation_price', methods: ['POST'])]
     public function calculationPrice(CalculationPriceRequest $calculationPriceRequest): JsonResponse
     {
         $query = new CalculationPriceQuery(
