@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "7a87d36f-bfb8-4bb3-a9cd-2a1358558fec",
+		"name": "systemeio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21453595",
+		"_collection_link": "https://restless-meteor-443166.postman.co/workspace/Team-Workspace~629ce08b-6b8a-496e-889b-36d52248b1df/collection/21453595-7a87d36f-bfb8-4bb3-a9cd-2a1358558fec?action=share&source=collection_link&creator=21453595"
+	},
+	"item": [
+		{
+			"name": "расчёт цены",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product\": \"Iphone\",\n    \"taxNumber\": \"DE123456789\",\n    \"couponCode\": \"D16\",\n    \"paymentProcessor\": \"paypal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2095/v1/calculation/price",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2095",
+					"path": [
+						"v1",
+						"calculation",
+						"price"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "оплата",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product\": \"Iphone\",\n    \"taxNumber\": \"DE123456789\",\n    \"couponCode\": \"D16\",\n    \"paymentProcessor\": \"paypal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2095/v1/payment/processor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2095",
+					"path": [
+						"v1",
+						"payment",
+						"processor"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
