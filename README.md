@@ -60,7 +60,7 @@ docker exec systemeio_php php bin/console doctrine:fixtures:load -n
 
 ## Makefile
 - Linux установка "sudo apt install make"
-- Выполнить команду (всё тоже самое что и команды выше)
+- Выполнить команду (всё тоже самое что и команды выше только одной командой)
 ```
 make first-start
 ```
@@ -74,7 +74,20 @@ CalculationController ищет аргумент CalculationPriceRequest, Request
 ![img.png](Images%2Fimg.png)
 
 
+## Дополнительно
+- Использовал Статический анализ кода ["friendsofphp/php-cs-fixer"](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer) 
+- Засекретил [ENV](https://symfony.com/doc/current/configuration/secrets.html)
+- UnitTest не сделал
+
 ## БД
+
+```sql
+DB_HOST=postgres
+DB_DBNAME=systemeio
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=root
+```
 
 - **country_tax** 
   - id
