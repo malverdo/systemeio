@@ -29,14 +29,15 @@ class CalculationController
     #[Route('/price', name: 'calculation_price', methods: ['POST'])]
     public function calculationPrice(CalculationPriceRequest $calculationPriceRequest): JsonResponse
     {
-        $query = new CalculationPriceQuery(
-            $calculationPriceRequest->product,
-            $calculationPriceRequest->taxNumber,
-            $calculationPriceRequest->paymentProcessor,
-            $calculationPriceRequest->couponCode ?? null,
-        );
-        $price = $this->queryBus->handle($query);
         try {
+            $query = new CalculationPriceQuery(
+                $calculationPriceRequest->product,
+                $calculationPriceRequest->taxNumber,
+                $calculationPriceRequest->paymentProcessor,
+                $calculationPriceRequest->couponCode ?? null,
+            );
+            $price = $this->queryBus->handle($query);
+
             return $this->responseFactory->success($price);
         } catch (Exception $exception) {
             return $this->responseFactory->error();
