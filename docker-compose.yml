@@ -9,7 +9,7 @@ services:
       - "2095:3000"
     volumes:
       - ./deployment/docker/${APP}/conf/${PROJECT}.conf:/etc/nginx/conf.d/${PROJECT}.conf
-      - ./${PROJECT}:/home/apps
+      - ./${PROJECT}:/var/www/html
     depends_on:
       - systemeio
   systemeio:
@@ -18,7 +18,7 @@ services:
       context: deployment/docker/${APP}/php
       dockerfile: php-fpm.docker
     volumes:
-      - ./${PROJECT}:/home/apps
+      - ./${PROJECT}:/var/www/html
     # настройка Xdebug
     environment:
       - PHP_IDE_CONFIG=serverName=php

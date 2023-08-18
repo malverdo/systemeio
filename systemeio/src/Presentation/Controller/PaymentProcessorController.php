@@ -64,7 +64,7 @@ class PaymentProcessorController
 
             return $this->responseFactory->success();
         } catch (Exception $exception) {
-            return $this->responseFactory->error();
+            return $this->responseFactory->error([$exception->getMessage()]);
         }
     }
 

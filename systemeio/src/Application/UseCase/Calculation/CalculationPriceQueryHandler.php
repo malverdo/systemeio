@@ -40,7 +40,7 @@ final class CalculationPriceQueryHandler implements QueryHandler
     {
         $countryTax = $this->countries->getFullTaxNumber($query->taxNumber);
         $product = $this->products->getName($query->product);
-        $code = $this->coupons->findCode($query->couponCode);
+        $code = $this->coupons->getCode($query->couponCode);
 
 
         $price = $product->price()->toArray()["EUR"];

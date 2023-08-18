@@ -40,7 +40,7 @@ class CalculationController
 
             return $this->responseFactory->success($price);
         } catch (Exception $exception) {
-            return $this->responseFactory->error();
+            return $this->responseFactory->error([$exception->getMessage()]);
         }
     }
 
