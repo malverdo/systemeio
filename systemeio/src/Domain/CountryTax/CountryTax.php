@@ -46,4 +46,9 @@ class CountryTax
         $this->symbol = $symbol;
         $this->fullTaxNumber = sprintf('%s%s%s', $code, $symbol, $format);
     }
+
+    public function percent(): int
+    {
+        return $this->percent;
+    }
 }

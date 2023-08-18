@@ -30,7 +30,7 @@ class AppFixtures extends Fixture
 
        $countryTax = new Coupon(Coupon::TYPE_PERCENT, 'D15', 20.20);
        $manager->persist($countryTax);
-       $countryTax = new Coupon(Coupon::TYPE_FIXED, 'D16', 150.00);
+       $countryTax = new Coupon(Coupon::TYPE_FIXED, 'D16', 5.00);
        $manager->persist($countryTax);
 
        $countryTax = new Product(MultiMoney::fromExchange(20), 'Наушники');

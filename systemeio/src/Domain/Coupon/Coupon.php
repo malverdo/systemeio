@@ -41,4 +41,14 @@ class Coupon
         $this->code = $code;
         $this->amount = $amount;
     }
+
+    public function type(): string
+    {
+        return $this->type;
+    }
+
+    public function amount(): float
+    {
+        return $this->amount;
+    }
 }

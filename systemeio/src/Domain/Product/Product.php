@@ -34,4 +34,9 @@ class Product
         $this->price = $price;
         $this->name = $name;
     }
+
+    public function price(): MultiMoney
+    {
+        return $this->price;
+    }
 }
