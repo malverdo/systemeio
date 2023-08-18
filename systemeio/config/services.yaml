@@ -8,6 +8,7 @@ imports:
     - { resource: 'services/presentation.yaml' }
     - { resource: 'services/repositories.yaml' }
     - { resource: 'services/usecases.yaml' }
+    - { resource: 'services/fixture.yaml' }
 
 
 

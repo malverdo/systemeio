@@ -3,6 +3,7 @@ doctrine:
         default_connection: systemeio
         connections:
             systemeio:
+                use_savepoints: true
                 driver: 'pdo_pgsql'
                 server_version: '13'
                 charset: utf8
@@ -17,13 +18,14 @@ doctrine:
         default_entity_manager: default
         entity_managers:
             default:
+                report_fields_where_declared: true
                 connection: systemeio
-                naming_strategy: doctrine.orm.naming_strategy.underscore
+                naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
                 auto_mapping: true
                 mappings:
                     AppDomain:
                         is_bundle: false
-                        type: annotation
+                        type: attribute
                         dir: '%kernel.project_dir%/src/Domain'
                         prefix: 'App\Domain'
                         alias: Domain
