@@ -7,6 +7,7 @@ namespace App\Domain\CountryTax;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NoResultException;
+use Doctrine\ORM\UnexpectedResultException;
 
 final class CountryTaxRepository
 {
@@ -22,11 +23,12 @@ final class CountryTaxRepository
 
     /**
      * @throws NoResultException
+     * @throws UnexpectedResultException
      */
     public function getFullTaxNumber(string $taxNumber): CountryTax
     {
         if (!$countryTax = $this->repository->findOneBy(['fullTaxNumber' => $taxNumber])) {
-            throw new NoResultException();
+            throw new UnexpectedResultException(sprintf('not result "%s"', $taxNumber));
         }
 
         return $countryTax;
