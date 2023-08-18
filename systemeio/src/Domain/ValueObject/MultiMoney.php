@@ -4,13 +4,8 @@ declare(strict_types=1);
 
 namespace App\Domain\ValueObject;
 
-use App\Domain\ExchangeRate\ExchangeRate;
-use Currency\CurrencyCode;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Exception;
-use InvalidArgumentException;
-use Money\Money;
 
 #[ORM\Embeddable]
 class MultiMoney
@@ -38,6 +33,7 @@ class MultiMoney
     }
 
     /**
+     * @TODO iso-currency https://github.com/fortis/iso-currency
      * @throws Exception
      */
     public static function fromExchange(float $money, ?object $exchanger = null): self
