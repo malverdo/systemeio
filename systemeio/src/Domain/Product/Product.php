@@ -8,7 +8,6 @@ use App\Domain\ValueObject\MultiMoney;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\HasLifecycleCallbacks;
 
-
 #[HasLifecycleCallbacks]
 #[ORM\Entity]
 #[ORM\Table(name: 'product')]

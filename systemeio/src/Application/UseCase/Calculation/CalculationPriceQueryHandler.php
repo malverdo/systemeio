@@ -12,11 +12,9 @@ use App\Domain\Product\ProductRepository;
 use Exception;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
-
 #[AsMessageHandler]
 final class CalculationPriceQueryHandler implements QueryHandler
 {
-
     private CountryTaxRepository $countries;
     private CouponRepository $coupons;
     private ProductRepository $products;
@@ -25,8 +23,7 @@ final class CalculationPriceQueryHandler implements QueryHandler
         CountryTaxRepository $countries,
         CouponRepository     $coupons,
         ProductRepository    $products,
-    )
-    {
+    ) {
         $this->countries = $countries;
         $this->coupons = $coupons;
         $this->products = $products;

@@ -30,8 +30,7 @@ class CalculationPriceRequestResolver implements ArgumentValueResolverInterface
         RequestNormalize     $requestNormalize,
         FormResolver         $formResolver,
         FormFactoryInterface $formFactory
-    )
-    {
+    ) {
         $this->formFactory = $formFactory;
         $this->requestNormalize = $requestNormalize;
         $this->formResolver = $formResolver;

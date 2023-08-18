@@ -9,7 +9,6 @@ use App\Infrastructure\PaymentProcessor\PaypalPaymentProcessor;
 use Exception;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
-
 #[AsMessageHandler]
 final class PaypalPaymentProcessorCommandHandler implements CommandHandler
 {

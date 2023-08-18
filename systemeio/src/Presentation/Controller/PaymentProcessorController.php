@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Presentation\Controller;
 
-
 use App\Application\Service\ResponseFactory;
 use App\Application\UseCase\Calculation\CalculationPriceQuery;
 use App\Application\UseCase\PaymentProcessor\NewStripePaymentProcessorCommand;

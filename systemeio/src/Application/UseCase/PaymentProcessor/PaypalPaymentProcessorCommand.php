@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Application\UseCase\PaymentProcessor;
 
-
 use App\Infrastructure\Bus\Command;
 
 final class PaypalPaymentProcessorCommand implements Command

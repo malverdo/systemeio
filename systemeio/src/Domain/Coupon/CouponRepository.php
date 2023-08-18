@@ -28,7 +28,7 @@ final class CouponRepository
      */
     public function getCode(?string $code): Coupon
     {
-        $nullObject = new CouponNull('','', 0);
+        $nullObject = new CouponNull('', '', 0);
         $coupon = $code ? $this->repository->findOneBy(['code' => $code]) : $nullObject;
 
         if (is_null($coupon)) {

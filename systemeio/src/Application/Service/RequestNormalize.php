@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 final class RequestNormalize
 {
-
     public function normalize(Request $request)
     {
         $content = [];

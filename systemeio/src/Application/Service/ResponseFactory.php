@@ -7,6 +7,7 @@ namespace App\Application\Service;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\SerializerInterface;
+
 use function get_class;
 use function in_array;
 

@@ -9,7 +9,6 @@ use App\Infrastructure\PaymentProcessor\NewStripePaymentProcessor;
 use Exception;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
-
 #[AsMessageHandler]
 final class NewStripePaymentProcessorCommandHandler implements CommandHandler
 {

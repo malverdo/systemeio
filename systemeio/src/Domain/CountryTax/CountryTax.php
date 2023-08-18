@@ -7,7 +7,6 @@ namespace App\Domain\CountryTax;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\HasLifecycleCallbacks;
 
-
 #[HasLifecycleCallbacks]
 #[ORM\Entity]
 #[ORM\Table(name: 'country_tax')]

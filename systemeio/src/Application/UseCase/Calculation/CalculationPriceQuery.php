@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Application\UseCase\Calculation;
 
-
 use App\Infrastructure\Bus\Query;
 
 final class CalculationPriceQuery implements Query
