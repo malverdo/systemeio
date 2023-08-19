@@ -69,7 +69,7 @@ make first-start
 ## Схема работы 
 
 CalculationController ищет аргумент CalculationPriceRequest, RequestResolver проверяет и отправляет в CalculationPriceFormType,
-Контроллер в случее успеха отправляет в траспорт query|command где происходит обработка, в случае успеха контроллер вызывает ResponseFactory
+Контроллер в случае успеха отправляет в транспорт query|command, где происходит обработка, в случае успеха контроллер вызывает ResponseFactory
 
 ![img.png](Images%2Fimg.png)
 
@@ -78,6 +78,12 @@ CalculationController ищет аргумент CalculationPriceRequest, Request
 - Использовал Статический анализ кода ["friendsofphp/php-cs-fixer"](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer) 
 - Засекретил [ENV](https://symfony.com/doc/current/configuration/secrets.html)
 - UnitTest не сделал
+- SOLID
+  - SRP (соблюден)
+  - OCP (соблюден)
+  - LSP (соблюден)
+  - ISP (соблюден)
+  - DIP (не соблюден)
 
 ## БД
 
