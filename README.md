@@ -83,7 +83,7 @@ CalculationController ищет аргумент CalculationPriceRequest, Request
   - OCP (соблюден)
   - LSP (соблюден)
   - ISP (соблюден)
-  - DIP (не соблюден)
+  - DIP (соблюден)
 
 ## БД
 
